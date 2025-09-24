@@ -3,7 +3,7 @@ function calculateNetSalary(basicSalary, benefits) {
   const grossSalary = basicSalary + benefits;
 
   // 2. NSSF Contribution (6% of pensionable pay, capped by Tier I & II)
-  const pensionablePay = Math.min(grossSalary, 72000); 
+  const pensionablePay = Math.min(grossSalary, 72000);
   const nssf = pensionablePay * 0.06;
 
   // 3. SHIF Contribution (2.75% of gross)
@@ -20,13 +20,22 @@ function calculateNetSalary(basicSalary, benefits) {
   if (taxableIncome <= 24000) {
     payee = taxableIncome * 0.1;
   } else if (taxableIncome <= 32333) {
-    payee = (24000 * 0.1) + ((taxableIncome - 24000) * 0.25);
+    payee = 24000 * 0.1 + (taxableIncome - 24000) * 0.25;
   } else if (taxableIncome <= 500000) {
-    payee = (24000 * 0.1) + (8333 * 0.25) + ((taxableIncome - 32333) * 0.30);
+    payee = 24000 * 0.1 + 8333 * 0.25 + (taxableIncome - 32333) * 0.3;
   } else if (taxableIncome <= 800000) {
-    payee = (24000 * 0.1) + (8333 * 0.25) + (467667 * 0.30) + ((taxableIncome - 500000) * 0.325);
+    payee =
+      24000 * 0.1 +
+      8333 * 0.25 +
+      467667 * 0.3 +
+      (taxableIncome - 500000) * 0.325;
   } else {
-    payee = (24000 * 0.1) + (8333 * 0.25) + (467667 * 0.30) + (300000 * 0.325) + ((taxableIncome - 800000) * 0.35);
+    payee =
+      24000 * 0.1 +
+      8333 * 0.25 +
+      467667 * 0.3 +
+      300000 * 0.325 +
+      (taxableIncome - 800000) * 0.35;
   }
 
   // Apply Personal Relief (Ksh 2,400)
@@ -45,7 +54,8 @@ function calculateNetSalary(basicSalary, benefits) {
 }
 
 //Example run (replace values as needed)
-const basicSalary = 50000;   
-const benefits = 10000;      
+const basicSalary = 50000;
+const benefits = 10000;
+style;
 
-calculateNetSalary(basicSalary, benefits);   
+calculateNetSalary(basicSalary, benefits);

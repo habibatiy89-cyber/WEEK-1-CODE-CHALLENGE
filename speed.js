@@ -1,7 +1,5 @@
 
 
-
-
 // Set the speed of the car 
 const speed = 80; 
 
